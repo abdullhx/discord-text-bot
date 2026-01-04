@@ -19,10 +19,10 @@ class TextModal(discord.ui.Modal, title="تحويل النص"):
             [f"\"{line.strip()}\"," for line in lines if line.strip()]
         )
 
-        await interaction.response.send_message(
-            f"```{result}```",
-            ephemeral=True
-        )
+await interaction.response.send_message(
+    result,
+    ephemeral=True
+)
 
 class OpenModal(discord.ui.View):
     @discord.ui.button(label="✍️ أدخل النص", style=discord.ButtonStyle.primary)
